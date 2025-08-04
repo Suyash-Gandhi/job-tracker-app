@@ -30,6 +30,6 @@ Live deployment and additional features like notifications and user profile mana
 🙋‍♂️ Author
 Suyash Gandhi
 
-GitHub: @suyashgandhi
-LinkedIn: linkedin.com/in/suyashgandhi
+- GitHub: @suyashgandhi
+- LinkedIn: linkedin.com/in/suyashgandhi
 
