@@ -28,7 +28,7 @@ Live deployment and additional features like notifications and user profile mana
 
 
 ## 🙋‍♂️ Author
-## Suyash Gandhi
+#### Suyash Gandhi
 
 - Email: suyash25gandhi@gmail.com
 - GitHub: https://github.com/Suyash-Gandhi
