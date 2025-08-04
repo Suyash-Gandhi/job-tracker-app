@@ -21,15 +21,16 @@ A full-stack MERN application to manage and track job applications, interviews, 
 - **Database:** MongoDB
 - **Others:** JWT, React Router
 
-📌 Status
+## 📌 Status
 🚧 This project is currently in development.
 Live deployment and additional features like notifications and user profile management coming soon.
 
 
 
-🙋‍♂️ Author
-Suyash Gandhi
+## 🙋‍♂️ Author
+## Suyash Gandhi
 
-- GitHub: @suyashgandhi
-- LinkedIn: linkedin.com/in/suyashgandhi
+- Email: suyash25gandhi@gmail.com
+- GitHub: https://github.com/Suyash-Gandhi
+- LinkedIn: linkedin.com/in/suyash-gandhi-8899302a6
 
