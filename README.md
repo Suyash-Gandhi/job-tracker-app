@@ -32,5 +32,5 @@ Live deployment and additional features like notifications and user profile mana
 
 - Email: suyash25gandhi@gmail.com
 - GitHub: https://github.com/Suyash-Gandhi
-- LinkedIn: linkedin.com/in/suyash-gandhi-8899302a6
+- LinkedIn: (linkedin.com/in/suyash-gandhi-8899302a6)
 
