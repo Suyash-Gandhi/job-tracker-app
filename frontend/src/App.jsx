@@ -7,7 +7,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<AuthPage />} />
-      <Route path="/dashbord" element={<Dashboard />} />
+      <Route path="/dashbord/*" element={<Dashboard />} />
     </Routes>
   );
 };
