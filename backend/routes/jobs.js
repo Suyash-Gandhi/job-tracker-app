@@ -1,28 +1,13 @@
-import express from "express";
-import Job from "../models/Job.js";
+import express from 'express';
+import { getJobs, createJob, updateJob, deleteJob } from '../controllers/jobController.js';
+import authMiddleware from '../middleware/auth.js';
 
 const router = express.Router();
+router.use(authMiddleware);
 
-// POST - Add job
-router.post("/", async (req, res) => {
-  try {
-    const job = new Job(req.body);
-    await job.save();
-    res.status(201).json({ success: true, data: job });
-  } catch (err) {
-    res.status(400).json({ success: false, error: err.message });
-  }
-});
-
-// GET - List jobs
-router.get("/", async (req, res) => {
-  try {
-    const jobs = await Job.find({},"-_id -__v -createdAt -updatedAt");
-    const keys=Object.keys(jobs[0].toObject())
-    res.status(200).json({ success: true, data: jobs ,keys:keys });
-  } catch (err) {
-    res.status(500).json({ success: false, error: err.message });
-  }
-});
+router.get('/', getJobs);
+router.post('/', createJob);
+router.put('/:id', updateJob);
+router.delete('/:id', deleteJob);
 
 export default router;

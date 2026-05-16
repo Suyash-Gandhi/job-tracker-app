@@ -1,25 +1,31 @@
 import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
 import cors from 'cors';
-import routes from './routes/auth.js';
-import jobsRoute from "./routes/jobs.js";
+import dotenv from 'dotenv';
+import connectDB from './config/db.js';
+import authRoutes from './routes/auth.js';
+import jobRoutes from './routes/jobs.js';
+import peopleRoutes from './routes/people.js';
+import interviewRoutes from './routes/interviews.js';
+import analyticsRoutes from './routes/analytics.js';
+import resumeRoutes from './routes/resume.js';
 
-dotenv.config()
+dotenv.config();
+connectDB();
 
-const app= express()
-app.use(express.json())
-app.use(cors())
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-const PORT=process.env.PORT||5000
+app.use('/api/auth', authRoutes);
+app.use('/api/jobs', jobRoutes);
+app.use('/api/people', peopleRoutes);
+app.use('/api/interviews', interviewRoutes);
+app.use('/api/analytics', analyticsRoutes);
+app.use('/api/analyze', resumeRoutes);
 
-mongoose.connect(process.env.MONGO_URI).then(()=>console.log("mongodb connected"))
-.catch(err=>console.error("mongodb error",err))
+app.use((err, req, res, next) => {
+  res.status(500).json({ message: err.message || 'Server error' });
+});
 
-app.use("/",routes)
-app.use("/dashbord/jobs", jobsRoute);
-
-app.listen(PORT,()=>{
-    console.log(`server running on ${PORT}`);
-    
-})
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
