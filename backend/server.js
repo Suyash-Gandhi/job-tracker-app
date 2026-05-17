@@ -21,12 +21,12 @@ app.use(cors({
 
 app.use(express.json());
 
-app.use('/api/auth', authRoutes);
-app.use('/api/jobs', jobRoutes);
-app.use('/api/people', peopleRoutes);
-app.use('/api/interviews', interviewRoutes);
-app.use('/api/analytics', analyticsRoutes);
-app.use('/api/analyze', resumeRoutes);
+app.use('/auth', authRoutes);
+app.use('/jobs', jobRoutes);
+app.use('/people', peopleRoutes);
+app.use('/interviews', interviewRoutes);
+app.use('/analytics', analyticsRoutes);
+app.use('/analyze', resumeRoutes);
 
 app.use((err, req, res, next) => {
   res.status(500).json({ message: err.message || 'Server error' });
